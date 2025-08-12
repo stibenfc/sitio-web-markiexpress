@@ -1,0 +1,731 @@
+/* Reset y base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-color: #fff;
+    color: #333;
+}
+
+/* Barra superior */
+.top-bar {
+    background-color: #555555;
+    color: white;
+    padding: 10px 20px;
+    font-size: 14px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+/* ESTILOS PARA LOS ICONOS DEL TOP-BAR */
+.top-bar .contact-left span,
+.top-bar .contact-right span {
+    display: flex;
+    align-items: center;
+    margin-right: 15px;
+}
+.top-bar .contact-left span i,
+.top-bar .contact-right span i {
+    font-size: 16px;
+    margin-right: 8px;
+    color: #ffffff;
+}
+.top-bar .contact-left strong {
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .top-bar {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .contact-left,
+    .contact-right {
+        width: 100%;
+        margin-bottom: 5px;
+    }
+}
+
+/* Navegación principal */
+.main-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 30px;
+    background-color: rgba(248, 248, 248, 0.8);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-bottom: 1px solid #ccc;
+    flex-wrap: wrap;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+    height: 90px;
+    overflow: hidden;
+}
+
+.logo img {
+    height: 100px;
+    object-fit: contain;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #000;
+    font-weight: 500;
+    padding-bottom: 5px;
+    position: relative;
+}
+
+.menu a.active,
+.menu a:hover {
+    color: #CC0000;
+}
+
+.menu a.active::after,
+.menu a:hover::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #CC0000;
+    left: 0;
+    bottom: 0;
+}
+
+.flag {
+    background: #CC0000;
+    color: white !important;
+    padding: 6px 12px;
+    border-radius: 4px;
+}
+
+@media (max-width: 768px) {
+    .main-nav {
+        flex-direction: column;
+        padding: 15px;
+    }
+    .menu {
+        flex-direction: column;
+        width: 100%;
+        margin-top: 15px;
+    }
+    .menu a {
+        padding: 8px 0;
+    }
+}
+
+/* Hero */
+.hero {
+    position: relative;
+    background-image: url("img/background.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 650px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-image 1s ease-in-out;
+}
+
+.overlay {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+}
+
+.hero-text {
+    position: relative;
+    color: white;
+    text-align: center;
+    z-index: 2;
+    padding: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.slider-controls {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+    z-index: 3;
+    padding: 0 20px;
+}
+
+.arrow {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    font-size: 28px;
+    padding: 10px 16px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.arrow:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Bienvenida */
+.bienvenida-box {
+    background-color: #f8f8f8;
+    border-left: 5px solid #CC0000;
+    padding: 30px;
+    max-width: 1000px;
+    margin: 40px auto;
+    border-radius: 6px;
+    font-size: 17px;
+    line-height: 1.6;
+    box-shadow: 0 0 10px rgba(0,0,0,0.08);
+}
+
+.bienvenida-box h2 {
+    color: #CC0000;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+/* Footer */
+.footer {
+    background-color: #3a3a3a;
+    color: white;
+}
+
+.footer a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+/* --- ESTILOS PARA ÍCONOS SOCIALES --- */
+.social-icons .fab {
+    font-size: 28px;
+    margin-right: 15px;
+    vertical-align: middle;
+    transition: transform 0.2s ease-in-out;
+}
+
+.social-icons .fa-facebook-f {
+    color: #1877F2;
+}
+
+.social-icons .fa-whatsapp {
+    color: #25D366;
+}
+
+.social-icons .fa-instagram {
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: #d6249f;
+}
+
+.social-icons .fab:hover {
+    transform: scale(1.1);
+}
+
+.social-icons a {
+    text-decoration: none;
+    display: inline-block;
+}
+
+.social-icons a:last-child .fab {
+    margin-right: 0;
+}
+/* --- FIN ESTILOS ÍCONOS SOCIALES --- */
+
+/* Nosotros */
+.nosotros-section {
+    background-color: #f9f9f9;
+}
+
+.nosotros-section h6 {
+    color: #CC0000;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+.nosotros-section h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.nosotros-section ul {
+    padding-left: 1.2rem;
+}
+
+.nosotros-section ul li {
+    margin-bottom: 6px;
+    line-height: 1.5;
+}
+
+.vision-quote {
+    border-left: 4px solid #CC0000;
+    padding-left: 15px;
+    font-style: italic;
+    color: #555;
+}
+
+/* Servicios */
+.servicios-section {
+    padding: 0;
+}
+
+.servicios-header-background {
+    position: relative;
+    background-image: url('img/servicios.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    padding: 80px 0;
+    color: white;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
+}
+
+.servicios-header-background::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.servicios-header-background .container {
+    position: relative;
+    z-index: 2;
+}
+
+.servicios-header-background .section-title,
+.servicios-header-background .section-description {
+    color: white;
+}
+
+.servicios-content-wrapper {
+    position: relative;
+    z-index: 2;
+    background-color: #fff;
+    border-radius: 16px;
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: -80px auto 40px auto;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+}
+
+.servicios-content-wrapper .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
+}
+
+.servicios-content-wrapper .servicio-item {
+    width: calc(50% - 20px);
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.servicios-content-wrapper .servicio-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.servicio-item .servicio-img-wrapper {
+    width: 100%;
+    height: 180px;
+    overflow: hidden;
+    border-radius: 6px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.servicio-item .servicio-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center center;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.servicio-item .servicio-img:hover {
+    transform: scale(1.05);
+}
+
+.servicio-item h3 {
+    font-size: 22px;
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-weight: bold;
+    color: #CC0000;
+}
+
+.servicio-item p {
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 10px;
+    color: #555;
+    flex-grow: 1;
+}
+
+.servicio-item strong {
+    color: #333;
+}
+
+@media (max-width: 992px) {
+    .servicios-content-wrapper .servicio-item {
+        width: 100%;
+        margin-left: 0 !important;
+    }
+}
+
+/* --- LIGHTBOX STYLES --- */
+.lightbox-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.lightbox-overlay.active {
+    display: flex;
+}
+
+.lightbox-content {
+    position: relative;
+    max-width: 90%;
+    max-height: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.lightbox-img {
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+    object-fit: contain;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 15px;
+    right: 30px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    text-shadow: 0 0 5px rgba(0,0,0,0.8);
+    z-index: 1001;
+}
+
+.lightbox-close:hover,
+.lightbox-close:focus {
+    color: #CC0000;
+    text-decoration: none;
+}
+/* --- END LIGHTBOX STYLES --- */
+
+/* Utilidades */
+.section-title {
+    font-size: 38px;
+    font-weight: 700;
+    color: #CC0000;
+    margin-bottom: 20px;
+}
+
+.section-description {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.d-none {
+    display: none !important;
+}
+
+/* PQRS Section */
+.pqrs-section {
+    background-color: #f8f8f8;
+    padding: 60px 0;
+}
+
+.pqrs-title {
+    font-size: 32px;
+    font-weight: 700;
+    color: #CC0000;
+    margin-bottom: 20px;
+}
+
+.pqrs-description {
+    font-size: 16px;
+    color: #555555;
+    margin-bottom: 30px;
+}
+
+.pqrs-form {
+    max-width: 700px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    border-top: 5px solid #CC0000;
+}
+
+.pqrs-form .form-label {
+    font-weight: 500;
+    color: #555555;
+    margin-bottom: 8px;
+}
+
+.pqrs-form .form-control {
+    border: 1px solid #C0C0C0;
+    border-radius: 4px;
+    padding: 10px 15px;
+    font-size: 16px;
+    color: #333;
+    transition: border-color 0.3s ease;
+}
+
+.pqrs-form .form-control:focus {
+    border-color: #CC0000;
+    box-shadow: 0 0 0 0.25rem rgba(204, 0, 0, 0.25);
+    outline: none;
+}
+
+.pqrs-form .form-check-label {
+    color: #555555;
+}
+
+.pqrs-form .form-check-input:checked {
+    background-color: #CC0000;
+    border-color: #CC0000;
+}
+
+.pqrs-form textarea.form-control {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.pqrs-form .form-text {
+    font-size: 0.85em;
+    color: #888;
+}
+
+.pqrs-submit-btn {
+    background-color: #CC0000 !important;
+    border-color: #CC0000;
+    font-weight: 700;
+    padding: 12px 25px;
+    font-size: 18px;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    color: white !important;
+    font-weight: bold;
+}
+
+.pqrs-submit-btn:hover {
+    background-color: #990000;
+    border-color: #990000;
+}
+
+.pqrs-submit-btn:active {
+    background-color: #770000 !important;
+    border-color: #770000 !important;
+}
+
+.pqrs-form .mb-4 {
+    width: 100%;
+}
+
+/* Contacto Section */
+.contacto-section {
+    background-color: #f8f8f8;
+    padding: 60px 0;
+}
+
+.contact-info-box {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    border-top: 5px solid #CC0000;
+}
+
+.contact-info-box .section-subtitle {
+    font-size: 14px;
+    letter-spacing: 1px;
+    color: #CC0000;
+}
+
+.contact-info-box .whatsapp-title {
+    font-size: 36px;
+    color: #555555;
+}
+
+.contact-info-box .whatsapp-title span {
+    color: #CC0000;
+}
+
+.contact-info-box .contact-emails {
+    font-size: 16px;
+    color: #555555;
+}
+
+.contact-form-box {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    border-top: 5px solid #555555;
+    margin-top: 40px;
+}
+
+.contact-form-box .form-question {
+    font-size: 28px;
+    font-weight: 700;
+    color: #555555;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.contact-form .form-label {
+    font-weight: 500;
+    color: #555555;
+    margin-bottom: 8px;
+}
+
+.contact-form .form-control {
+    border: 1px solid #C0C0C0;
+    border-radius: 4px;
+    padding: 10px 15px;
+    font-size: 16px;
+    color: #333;
+    transition: border-color 0.3s ease;
+}
+
+.contact-form .form-control:focus {
+    border-color: #CC0000;
+    box-shadow: 0 0 0 0.25rem rgba(204, 0, 0, 0.25);
+    outline: none;
+}
+
+.contact-form textarea.form-control {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.contact-form .form-text {
+    font-size: 0.85em;
+    color: #888;
+}
+
+.contact-submit-btn {
+    background-color: #CC0000 !important;
+    border-color: #CC0000;
+    font-weight: 700;
+    padding: 12px 25px;
+    font-size: 18px;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    color: white !important;
+    font-weight: bold;
+}
+
+.contact-submit-btn:hover {
+    background-color: #990000;
+    border-color: #990000;
+}
+
+.contact-submit-btn:active {
+    background-color: #770000 !important;
+    border-color: #770000 !important;
+}
+
+/* Estilo para el botón "Conócenos" en el Hero */
+.hero-btn {
+    background-color: #CC0000 !important;
+    border-color: #CC0000 !important;
+    color: white !important;
+    font-weight: 700;
+    padding: 12px 25px;
+    font-size: 18px;
+    transition: background-color 0.3s ease, border-color 0.3s ease !important;
+}
+
+.hero-btn:hover {
+    background-color: #990000;
+    border-color: #990000;
+}
+
+.hero-btn:active {
+    background-color: #770000 !important;
+    border-color: #770000 !important;
+}
+
+/* Nacionalización de Mercancía */
+.nacionalizacion-section {
+    background-color: #f9f9f9;
+    padding: 60px 0;
+}
+
+.nacionalizacion-section .section-title {
+    color: #555;
+    font-size: 32px;
+}
+
+.nacionalizacion-section h4 {
+    color: #CC0000;
+    margin-top: 20px;
+    font-weight: 700;
+}
+
+.nacionalizacion-section .row {
+    margin-top: 30px;
+}
+
+/* Sugerencia adicional: Consistencia en H6 de Nosotros */
+.nosotros-section h6 {
+    color: #CC0000;
+}
