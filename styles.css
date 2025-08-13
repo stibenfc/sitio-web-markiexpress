@@ -68,7 +68,6 @@ body {
     z-index: 999;
     box-shadow: 0 2px 5px rgba(0,0,0,0.08);
     height: 90px;
-    overflow: hidden;
 }
 
 .logo img {
@@ -113,20 +112,71 @@ body {
     border-radius: 4px;
 }
 
+/* === CAMBIOS AQUÍ: ESTILOS PARA EL BOTÓN Y EL MENÚ === */
+
+/* Por defecto, el botón está oculto en desktop */
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #CC0000;
+}
+
 @media (max-width: 768px) {
     .main-nav {
-        flex-direction: column;
-        padding: 15px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 20px;
     }
+    
+    /* En móvil, el botón se muestra */
+    .main-nav .hamburger {
+        display: block;
+    }
+
+    /* En móvil, el menú está oculto por defecto */
     .menu {
         flex-direction: column;
         width: 100%;
-        margin-top: 15px;
+        position: absolute;
+        top: 90px;
+        left: 0;
+        background-color: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+        border-top: 1px solid #ccc;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        padding: 20px;
+        text-align: center;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease-out, visibility 0.3s ease-out;
     }
+
+    /* En móvil, la clase 'open' muestra el menú */
+    .menu.open {
+        visibility: visible;
+        opacity: 1;
+    }
+    
     .menu a {
-        padding: 8px 0;
+        padding: 15px 0;
+        font-size: 18px;
+        border-bottom: 1px solid #eee;
+    }
+
+    .menu a:last-child {
+        border-bottom: none;
+    }
+    
+    .flag {
+        margin-top: 20px;
     }
 }
+/* ================================================== */
 
 /* Hero */
 .hero {

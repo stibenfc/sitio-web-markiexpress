@@ -1,3 +1,19 @@
+// === CAMBIOS AQUÍ: NUEVO CÓDIGO PARA EL MENÚ DE HAMBURGUESA ===
+const hamburger = document.querySelector('.hamburger');
+const menu = document.querySelector('.menu');
+
+hamburger.addEventListener('click', () => {
+    menu.classList.toggle('open');
+});
+
+// Opcional: Cerrar el menú si se hace clic en un enlace
+document.querySelectorAll('.menu a').forEach(link => {
+    link.addEventListener('click', () => {
+        menu.classList.remove('open');
+    });
+});
+// =============================================================
+
 let currentSlide = 0;
 const backgrounds = ['img/background.jpg', 'img/background2.jpg'];
 const hero = document.getElementById('hero');
