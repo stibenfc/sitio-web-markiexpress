@@ -255,18 +255,18 @@
                     Por favor, diligencia cada campo en este formulario; esto permitirá agilidad en el tiempo de respuesta.
                 </p>
 
-                                <form class="pqrs-form" name="pqr-form" netlify>
+                                <form class="pqrs-form" name="pqr-form" netlify data-netlify-recaptcha="true">
                     <div class="mb-4">
                         <label for="nombre" class="form-label">Nombre *</label>
-                                                <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Introduce tu nombre completo" required>
+                        <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Introduce tu nombre completo" required minlength="3" maxlength="50" pattern="[a-zA-ZáéíóúÁÉÍÓÚ\s]+" title="Solo se permiten letras y espacios">
                     </div>
                     <div class="mb-4">
                         <label for="correo" class="form-label">Correo electrónico *</label>
-                                                <input type="email" class="form-control" id="correo" name="correo" placeholder="Introduce tu correo electrónico" required>
+                        <input type="email" class="form-control" id="correo" name="correo" placeholder="Introduce tu correo electrónico" required>
                     </div>
                     <div class="mb-4">
                         <label for="telefono" class="form-label">Número de teléfono *</label>
-                                                <input type="tel" class="form-control" id="telefono" name="telefono" placeholder="Introduce tu número de teléfono" required>
+                        <input type="tel" class="form-control" id="telefono" name="telefono" placeholder="Introduce tu número de teléfono" required pattern="[0-9]{7,15}" title="Por favor, ingresa un número de teléfono válido (7 a 15 dígitos)">
                     </div>
 
                     <div class="mb-4">
@@ -291,9 +291,11 @@
 
                     <div class="mb-4">
                         <label for="mensaje" class="form-label">Mensaje *</label>
-                                                <textarea class="form-control" id="mensaje" name="mensaje" rows="6" placeholder="Introduce tu mensaje..." maxlength="250" required></textarea>
+                        <textarea class="form-control" id="mensaje" name="mensaje" rows="6" placeholder="Introduce tu mensaje..." maxlength="250" required></textarea>
                         <small class="form-text text-muted float-end mt-1" id="charCount">0 / 250</small>
                     </div>
+					
+					<div data-netlify-recaptcha="true"></div>
 
                     <div class="d-grid">
                         <button type="submit" class="btn btn-lg pqrs-submit-btn">Enviar mensaje</button>
@@ -316,10 +318,10 @@
 
 					<div class="contact-form-box">
 						<h3 class="form-question mb-4" style="color: #555555;">¿Quieres saber más?</h3>
-						<form class="contact-form" name="contact" netlify>
+						<form class="contact-form" name="contact" netlify data-netlify-recaptcha="true">
 							<div class="mb-4">
 								<label for="contact-nombre" class="form-label">Nombre *</label>
-								<input type="text" class="form-control" id="contact-nombre" name="nombre" placeholder="Nombre" required>
+								<input type="text" class="form-control" id="contact-nombre" name="nombre" placeholder="Nombre" required minlength="3" maxlength="50" pattern="[a-zA-ZáéíóúÁÉÍÓÚ\s]+" title="Solo se permiten letras y espacios">
 							</div>
 							<div class="mb-4">
 								<label for="contact-email" class="form-label">Email *</label>
@@ -327,13 +329,15 @@
 							</div>
 							<div class="mb-4">
 								<label for="contact-telefono" class="form-label">Número de Contacto *</label>
-								<input type="tel" class="form-control" id="contact-telefono" name="telefono" placeholder="Número de Contacto" required>
+								<input type="tel" class="form-control" id="contact-telefono" name="telefono" placeholder="Número de Contacto" required pattern="[0-9]{7,15}" title="Por favor, ingresa un número de teléfono válido (7 a 15 dígitos)">
 							</div>
                         <div class="mb-4">
                             <label for="contact-mensaje" class="form-label">Mensaje *</label>
-                                                        <textarea class="form-control" id="contact-mensaje" name="mensaje" rows="6" placeholder="Mensaje" maxlength="300" required></textarea>
+                            <textarea class="form-control" id="contact-mensaje" name="mensaje" rows="6" placeholder="Mensaje" maxlength="300" required></textarea>
                             <small class="form-text text-muted float-end mt-1" id="contactCharCount">0 / 300</small>
                         </div>
+							<div data-netlify-recaptcha="true"></div>
+
 							<div class="d-grid">
 								<button type="submit" class="btn btn-lg contact-submit-btn" name="submit">Enviar Mensaje</button>
 							</div>
