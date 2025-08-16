@@ -132,9 +132,11 @@ body {
         padding: 15px 20px;
     }
     
-    /* En móvil, el botón se muestra */
+    /* En móvil, el botón se muestra y se usa flexbox para alinear el icono y el texto */
     .main-nav .hamburger {
-        display: block;
+        display: flex;
+        align-items: center;
+        gap: 8px; /* Espacio entre el ícono y el texto */
     }
 
     /* En móvil, el menú está oculto por defecto */
@@ -162,10 +164,11 @@ body {
         opacity: 1;
     }
     
+    /* MODIFICACIÓN AQUÍ: CAMBIAR EL COLOR DEL SEPARADOR */
     .menu a {
         padding: 15px 0;
         font-size: 18px;
-        border-bottom: 1px solid #eee;
+        border-bottom: 1px solid #CC0000;
     }
 
     .menu a:last-child {
